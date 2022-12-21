@@ -8,7 +8,6 @@ public class PlayerRotation : MonoBehaviour
     public float rotationSpeed = 720;
     public int score;
     public GameObject pickup;
-    public GameObject manager;
 
 
 
@@ -45,7 +44,6 @@ public class PlayerRotation : MonoBehaviour
             Debug.Log("COLLISION!!!!");
            // Destroy(pickup);
             score = score + 1;
-            manager.SetActive(true);
 
         }
 
