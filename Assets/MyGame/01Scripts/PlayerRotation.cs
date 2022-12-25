@@ -7,7 +7,14 @@ public class PlayerRotation : MonoBehaviour
     public float speed = 5;
     public float rotationSpeed = 720;
     public int score;
-    public GameObject pickup;
+
+
+    public GameObject orange;
+    public GameObject zitrone;
+    public GameObject zimt;
+    public GameObject zucker;
+    public GameObject wein;
+
     public bool m = false;
 
 
@@ -34,7 +41,30 @@ public class PlayerRotation : MonoBehaviour
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
         }
 
-      
+        if (score == 1)
+        {
+            zitrone.SetActive(true);
+        }
+
+        if (score == 2)
+        {
+            zimt.SetActive(true);
+        }
+
+        if (score == 3)
+        {
+            zucker.SetActive(true);
+        }
+
+        if (score == 4)
+        {
+            wein.SetActive(true);
+        }
+
+        if (score == 5)
+        {
+
+        }
 
     }
 
@@ -51,8 +81,9 @@ public class PlayerRotation : MonoBehaviour
         if (collision.gameObject.tag == "Putdown" && m==true)
         {
             Debug.Log("Abgelegt");
-            Destroy(pickup);
+            Destroy(orange);
             OnDestroy();
+            m = false;
         }
 
     }
@@ -62,5 +93,8 @@ public class PlayerRotation : MonoBehaviour
         score++;
     }
 
+
 }
+
+
 
