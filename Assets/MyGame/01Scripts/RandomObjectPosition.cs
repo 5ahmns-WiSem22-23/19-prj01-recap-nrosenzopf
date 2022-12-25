@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class RandomObjectPosition : MonoBehaviour
 {
-    public float maxX = 5;
-    public float maxY = 5;
+    private float maxX = 4;
+    private float maxY = 4;
 
     void Start()
     {

@@ -15,12 +15,14 @@ public class PlayerRotation : MonoBehaviour
     public GameObject zucker;
     public GameObject wein;
 
+    public Material change;
+
     public bool m = false;
 
 
     void Start()
     {
-  
+        change.color = Color.grey;
     }
 
 
@@ -43,29 +45,34 @@ public class PlayerRotation : MonoBehaviour
         if (score == 1)
         {
             zitrone.SetActive(true);
+            change.color = Color.red;
         }
 
         if (score == 2)
         {
             zimt.SetActive(true);
             Destroy(zitrone);
+            change.color = Color.yellow;
+
         }
 
         if (score == 3)
         {
             zucker.SetActive(true);
             Destroy(zimt);
+            change.color = Color.red;
         }
 
         if (score == 4)
         {
             wein.SetActive(true);
             Destroy(zucker);
+            change.color = Color.yellow;
         }
 
         if (score == 5)
         {
-
+            change.color = Color.red;
         }
 
     }
