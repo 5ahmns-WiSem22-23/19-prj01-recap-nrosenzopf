@@ -8,6 +8,7 @@ public class PlayerRotation : MonoBehaviour
     public float rotationSpeed = 720;
     public int score;
     public GameObject pickup;
+    public bool m = false;
 
 
 
@@ -42,18 +43,23 @@ public class PlayerRotation : MonoBehaviour
         if(collision.gameObject.tag=="a")
         {
             Debug.Log("COLLISION!!!!");
-           // Destroy(pickup);
-            score = score + 1;
+             m = true;
+    // Destroy(pickup);
 
-        }
+}
 
-        if (collision.gameObject.tag == "Putdown")
+        if (collision.gameObject.tag == "Putdown" && m==true)
         {
             Debug.Log("Abgelegt");
+            Destroy(pickup);
+            OnDestroy();
         }
 
+    }
 
-
+    void OnDestroy()
+    {
+        score++;
     }
 
 }
