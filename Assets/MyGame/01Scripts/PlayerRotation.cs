@@ -18,10 +18,9 @@ public class PlayerRotation : MonoBehaviour
     public bool m = false;
 
 
-
     void Start()
     {
-
+  
     }
 
 
@@ -49,16 +48,19 @@ public class PlayerRotation : MonoBehaviour
         if (score == 2)
         {
             zimt.SetActive(true);
+            Destroy(zitrone);
         }
 
         if (score == 3)
         {
             zucker.SetActive(true);
+            Destroy(zimt);
         }
 
         if (score == 4)
         {
             wein.SetActive(true);
+            Destroy(zucker);
         }
 
         if (score == 5)
