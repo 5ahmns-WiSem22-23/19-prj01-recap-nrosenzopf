@@ -14,6 +14,8 @@ public class PlayerRotation : MonoBehaviour
     public GameObject zimt;
     public GameObject zucker;
     public GameObject wein;
+    public GameObject wasser;
+    public GameObject rum;
 
     public Material change;
 
@@ -72,6 +74,21 @@ public class PlayerRotation : MonoBehaviour
 
         if (score == 5)
         {
+            wasser.SetActive(true);
+            Destroy(wein);
+            change.color = Color.red;
+        }
+
+        if (score == 6)
+        {
+            rum.SetActive(true);
+            Destroy(wasser);
+            change.color = Color.blue;
+        }
+
+        if (score == 7)
+        {
+            Destroy(rum);
             change.color = Color.red;
         }
 

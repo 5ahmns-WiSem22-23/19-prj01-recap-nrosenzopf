@@ -4,15 +4,49 @@ using UnityEngine;
 
 public class RandomObjectPosition : MonoBehaviour
 {
-    private float maxX = 4;
-    private float maxY = 4;
+    public GameObject pickup;
+
+    // An array of objects with box colliders to avoid
+    public GameObject[] objectsToAvoid;
+    public Vector3 randomPosition;
 
     void Start()
     {
-        float randomX = Random.Range(-maxX, maxX);
-        float randomY = Random.Range(-maxY, maxY);
+        // Keep generating random positions until a suitable one is found
+       
+        bool positionFound = false;
+        while (!positionFound)
+        {
+            // Generate a random position within a certain range
+            randomPosition = new Vector3(Random.Range(-3f, 3f), Random.Range(-2.5f, 2.5f), 0f);
+            Debug.Log(randomPosition);
 
-        Vector3 randomPosition = new Vector3(randomX, randomY, 0);
-        transform.position = randomPosition;
+
+            // Check if the position is not colliding with any of the objects with box colliders
+            positionFound = true;
+            Debug.Log(positionFound);
+
+
+            foreach (GameObject obj in objectsToAvoid)
+            {
+                BoxCollider2D collider = obj.GetComponent<BoxCollider2D>();
+                if (collider.bounds.Contains(randomPosition))
+                {
+                    Debug.Log("Ready?");
+                    positionFound = false;
+                    break;
+                }
+            }
+
+            
+        }
+
+        if (positionFound==true)
+        {
+            pickup.transform.position = randomPosition;
+            Debug.Log("Jetzt erst");
+        }
+       
     }
 }
+
