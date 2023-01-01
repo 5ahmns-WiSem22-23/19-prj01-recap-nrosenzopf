@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerRotation : MonoBehaviour
 {
-    public float speed = 5;
+    public float speed = 1.5f;
     public float rotationSpeed = 720;
     public int score;
+    public Text displayText;
 
 
     public GameObject orange;
@@ -16,6 +18,8 @@ public class PlayerRotation : MonoBehaviour
     public GameObject wein;
     public GameObject wasser;
     public GameObject rum;
+
+    public GameObject panelwin;
 
     public Material change;
 
@@ -90,7 +94,10 @@ public class PlayerRotation : MonoBehaviour
         {
             Destroy(rum);
             change.color = Color.red;
+            panelwin.SetActive(true);
         }
+
+        displayText.text = score.ToString();
 
     }
 
