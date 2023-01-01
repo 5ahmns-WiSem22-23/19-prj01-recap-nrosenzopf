@@ -10,7 +10,6 @@ public class PlayerRotation : MonoBehaviour
     public int score;
     public Text displayText;
 
-
     public GameObject orange;
     public GameObject zitrone;
     public GameObject zimt;
@@ -19,6 +18,7 @@ public class PlayerRotation : MonoBehaviour
     public GameObject wasser;
     public GameObject rum;
 
+    public GameObject timer;
     public GameObject panelwin;
 
     public GameObject bubbles;
@@ -70,6 +70,7 @@ public class PlayerRotation : MonoBehaviour
             zucker.SetActive(true);
             Destroy(zimt);
             change.color = Color.red;
+            timer.SetActive(true);
         }
 
         if (score == 4)

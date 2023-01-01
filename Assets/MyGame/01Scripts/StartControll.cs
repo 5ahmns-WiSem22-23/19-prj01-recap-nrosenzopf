@@ -5,6 +5,8 @@ using UnityEngine;
 public class StartControll : MonoBehaviour
 {
     public GameObject panel;
+    public GameObject player;
+    public GameObject timer;
 
     public void OnButtonClick()
     {
@@ -12,5 +14,9 @@ public class StartControll : MonoBehaviour
         Debug.Log("Scheisse");
     }
  
- 
+ public void PlayerAktivieren()
+    {
+        player.SetActive(true);
+        timer.SetActive(true);
+    }
 }
