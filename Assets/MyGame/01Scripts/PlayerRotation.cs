@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerRotation : MonoBehaviour
 {
-    public float speed = 1.5f;
+    public float speed = 0.5f;
     public float rotationSpeed = 720;
     public int score;
     public Text displayText;
@@ -20,6 +20,8 @@ public class PlayerRotation : MonoBehaviour
     public GameObject rum;
 
     public GameObject panelwin;
+
+    public GameObject bubbles;
 
     public Material change;
 
@@ -51,6 +53,7 @@ public class PlayerRotation : MonoBehaviour
         if (score == 1)
         {
             zitrone.SetActive(true);
+            bubbles.SetActive(true);
             change.color = Color.red;
         }
 
