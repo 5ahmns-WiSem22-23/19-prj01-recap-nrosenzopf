@@ -9,36 +9,40 @@ public class TwentyWaiter : MonoBehaviour
     public GameObject TimeGood;
     public GameObject TimeGood2;
     public TextMeshPro textField;
-    // Use this for initialization
+ 
+
     void Start()
     {
-        // Starte die Coroutine zur wiederholten Aktivierung
+        StartCoroutine(TimerCoroutine());
         StartCoroutine(ActivateCoroutine());
     }
-
-    public void Update()
-    {
-        textField.text = interval.ToString();
-    }
-
-    // Die Coroutine zur wiederholten Aktivierung
     IEnumerator ActivateCoroutine()
     {
         while (true)
         {
+            Debug.Log("AAAAAAAAA");
             yield return new WaitForSeconds(interval);
-            // Aktiviere das GameObject
             TimeGood.SetActive(true);
 
-            // Warte die festgelegte Zeit
             yield return new WaitForSeconds(interval);
+            TimeGood2.SetActive(true);
 
-            // Deaktiviere das GameObject
-            TimeGood2.SetActive(false);
-
-            // Warte erneut die festgelegte Zeit
             yield return new WaitForSeconds(interval);
         }
     }
+    IEnumerator TimerCoroutine()
+    {
+        while (true)
+        {
+            for (int i = 20; i > 0; i--)
+            {
+                textField.text = i.ToString();
+                yield return new WaitForSeconds(1.0f);
+            }
+
+            textField.text = "20";
+        }
+    }
+   
 
 }

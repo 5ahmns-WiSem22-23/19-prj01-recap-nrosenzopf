@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
   
     public Transform player;
-    public float speed = 5.0f;
+    private float speed = 1.5f;
     public Timer timer;
 
     void Update()
@@ -20,7 +20,8 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         Debug.Log("GATZEEEE!");
         timer.timerDuration = timer.timerDuration - 20;
-        Destroy(this);
+        Destroy(gameObject);
+    
     }
 }
 

@@ -10,6 +10,6 @@ public class TimeGood : MonoBehaviour
         if (collision.gameObject.tag == "Player")
             Debug.Log("Moooooore!");
         timer.timerDuration = timer.timerDuration + 20;
-        Destroy(this);
+        Destroy(gameObject);
     }
 }

@@ -5,18 +5,18 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    public float timerDuration = 30.0f;
+    public float timerDuration = 60.0f;
     public Text timerText;
 
     public GameObject loosePanel;
 
-    private float elapsedTime = 0.0f;
+    private float eTime = 0.0f;
 
     void Update()
     {
-        elapsedTime += Time.deltaTime;
+        eTime += Time.deltaTime;
 
-        float timeRemaining = timerDuration - elapsedTime;
+        float timeRemaining = timerDuration - eTime;
         int minutes = (int)(timeRemaining / 60.0f);
         int seconds = (int)(timeRemaining % 60.0f);
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);

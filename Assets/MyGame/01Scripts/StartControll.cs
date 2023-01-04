@@ -7,6 +7,7 @@ public class StartControll : MonoBehaviour
     public GameObject panel;
     public GameObject player;
     public GameObject timer;
+    public GameObject timeGood;
 
     public void OnButtonClick()
     {
@@ -18,5 +19,6 @@ public class StartControll : MonoBehaviour
     {
         player.SetActive(true);
         timer.SetActive(true);
+        timeGood.SetActive(true);
     }
 }

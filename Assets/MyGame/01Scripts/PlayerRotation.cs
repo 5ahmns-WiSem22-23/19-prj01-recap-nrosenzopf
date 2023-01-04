@@ -70,7 +70,6 @@ public class PlayerRotation : MonoBehaviour
             zucker.SetActive(true);
             Destroy(zimt);
             change.color = Color.red;
-            timer.SetActive(true);
         }
 
         if (score == 4)
@@ -78,6 +77,7 @@ public class PlayerRotation : MonoBehaviour
             wein.SetActive(true);
             Destroy(zucker);
             change.color = Color.yellow;
+            timer.SetActive(true);
         }
 
         if (score == 5)
@@ -85,6 +85,7 @@ public class PlayerRotation : MonoBehaviour
             wasser.SetActive(true);
             Destroy(wein);
             change.color = Color.red;
+         //   timer.SetActive(false);
         }
 
         if (score == 6)
@@ -92,6 +93,7 @@ public class PlayerRotation : MonoBehaviour
             rum.SetActive(true);
             Destroy(wasser);
             change.color = Color.blue;
+        
         }
 
         if (score == 7)
@@ -99,6 +101,7 @@ public class PlayerRotation : MonoBehaviour
             Destroy(rum);
             change.color = Color.red;
             panelwin.SetActive(true);
+   
         }
 
         displayText.text = score.ToString();
@@ -111,7 +114,6 @@ public class PlayerRotation : MonoBehaviour
         {
             Debug.Log("COLLISION!!!!");
              m = true;
-    // Destroy(pickup);
 
 }
 
