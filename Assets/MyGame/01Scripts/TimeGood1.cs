@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TimeGood : MonoBehaviour
+public class TimeGood1 : MonoBehaviour
 {
     public Timer timer;
     private void OnTriggerEnter2D(Collider2D collision)

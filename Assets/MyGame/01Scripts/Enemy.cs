@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         Debug.Log("GATZEEEE!");
         timer.timerDuration = timer.timerDuration - 20;
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     
     }
 }

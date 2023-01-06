@@ -80,8 +80,9 @@ public class PlayerRotation : MonoBehaviour
         {
             wein.SetActive(true);
             Destroy(zucker);
+            
             change.color = Color.yellow;
-            timer.SetActive(true);
+          //  timer.SetActive(true);
         }
 
         if (score == 5)
@@ -109,14 +110,23 @@ public class PlayerRotation : MonoBehaviour
             playeer.SetActive(false);
             speed = 0;
             timofTheGame.SetActive(false);
-           // panelwin.SetActive(true);
-     
+            StartCoroutine(ActivateCoroutine());
+
 
 
         }
 
         displayText.text = score.ToString();
 
+    }
+
+    IEnumerator ActivateCoroutine()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(7);
+            panelwin.SetActive(true);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

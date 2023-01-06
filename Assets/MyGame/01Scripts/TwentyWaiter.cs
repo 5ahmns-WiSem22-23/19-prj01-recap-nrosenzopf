@@ -8,13 +8,16 @@ public class TwentyWaiter : MonoBehaviour
     public float interval = 20f;
     public GameObject TimeGood;
     public GameObject TimeGood2;
+    public GameObject TimeGood3;
     public TextMeshPro textField;
+    public GameObject bad;
  
 
     void Start()
     {
         StartCoroutine(TimerCoroutine());
         StartCoroutine(ActivateCoroutine());
+        StartCoroutine(BadTime());
     }
     IEnumerator ActivateCoroutine()
     {
@@ -28,6 +31,7 @@ public class TwentyWaiter : MonoBehaviour
             TimeGood2.SetActive(true);
 
             yield return new WaitForSeconds(interval);
+            TimeGood3.SetActive(true);
         }
     }
     IEnumerator TimerCoroutine()
@@ -43,6 +47,15 @@ public class TwentyWaiter : MonoBehaviour
             textField.text = "20";
         }
     }
-   
 
+    IEnumerator BadTime()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(25);
+            bad.SetActive(true);
+            yield return new WaitForSeconds(18);
+            bad.SetActive(true);
+        }
+    }
 }
