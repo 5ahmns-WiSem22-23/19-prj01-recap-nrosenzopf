@@ -101,6 +101,7 @@ public class PlayerRotation : MonoBehaviour
             Destroy(rum);
             change.color = Color.red;
             panelwin.SetActive(true);
+            timer.SetActive(false);
    
         }
 
