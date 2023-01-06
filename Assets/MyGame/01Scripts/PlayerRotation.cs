@@ -20,6 +20,10 @@ public class PlayerRotation : MonoBehaviour
 
     public GameObject timer;
     public GameObject panelwin;
+    public GameObject menschen;
+    public CameraZoomer camerazommerscript;
+    public GameObject playeer;
+    public GameObject timofTheGame;
 
     public GameObject bubbles;
 
@@ -100,9 +104,15 @@ public class PlayerRotation : MonoBehaviour
         {
             Destroy(rum);
             change.color = Color.red;
-            panelwin.SetActive(true);
-            timer.SetActive(false);
-   
+            menschen.SetActive(true);
+            camerazommerscript.zoomIn = true;
+            playeer.SetActive(false);
+            speed = 0;
+            timofTheGame.SetActive(false);
+           // panelwin.SetActive(true);
+     
+
+
         }
 
         displayText.text = score.ToString();
