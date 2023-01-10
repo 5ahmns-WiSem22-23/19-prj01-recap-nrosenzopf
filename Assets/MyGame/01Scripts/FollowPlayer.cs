@@ -6,7 +6,7 @@ public class FollowPlayer : MonoBehaviour
 {
     public GameObject player;
     public GameObject ablage;
-
+    public PlayerRotation slower;
 
     private bool shouldFollow = false;
 
@@ -16,6 +16,8 @@ public class FollowPlayer : MonoBehaviour
         {
             transform.position = player.transform.position;
             transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z - 0.5f);
+            slower.speed = 5.5f;
+
         }
     }
 

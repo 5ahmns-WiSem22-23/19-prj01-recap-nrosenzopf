@@ -144,6 +144,7 @@ public class PlayerRotation : MonoBehaviour
             Destroy(orange);
             OnDestroy();
             m = false;
+            speed = 4f;
         }
 
     }
