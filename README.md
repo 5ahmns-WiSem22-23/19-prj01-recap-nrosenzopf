@@ -18,7 +18,8 @@ If you really manage to collect all 7 ingredients in time and throw them into th
 - Pot with bubbles and color changes
 
 #### Target:
-- Player forward/backward (up/down arrow).
+- Player forward/backward (up/down arrow)
+- More Speed, if you picked up the object, less if Object is destroyed
 - Rotate player (left/right arrow)
 - WASD
 - Pick up packages when hovering over them
