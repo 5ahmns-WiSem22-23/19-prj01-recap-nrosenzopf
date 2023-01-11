@@ -30,7 +30,7 @@ If you really manage to collect all 7 ingredients in time and throw them into th
 - Self designed in Illustrator or PNGs from internet (See MyAssets)
 - Assets free download: Bubbles: https://assetstore.unity.com/packages/vfx/particles/environment/jiggly-bubble-free-61236
 
-####development platform
+#### development platform
 Unity 2020.3.18f1, Visual Studio 2019
 
 ## Impressions:
